@@ -1,0 +1,241 @@
+/*  Used to style the input field container
+    Display is set to flex, this allows the contents of the container to be aligned horizontally
+    Position is set to relative, to allow position of the child element to be relative to the parent element
+    Width is set to 95%, this allows the container to take up 95% of the parent container
+    The align-items is set to center, this aligns the contents of the container to the center
+*/
+.input {
+    display: flex;
+    position: relative;
+    width: 95%;
+    align-items: center;
+}
+
+/* 
+The input__box class is used to style the input field
+Width is set to 100%, this allows the input field to take up the full width of the parent container
+border-radius is set to 3.125rem, this gives the input field rounded edges
+Padding is set to 1.25rem 1.875rem, this adds space inside the input field
+Font-size is set to 1.5625rem, this makes the text inside the input field larger than other texts on the page
+Border is set to none, this removes the border around the input field
+Transition is set to 0.2s all, this allows the element to transition smoothly when the input field is focused
+Box-shadows is set to inset 0 0 0.3125rem black, this add a black shadow inside the input field
+ */
+.input__box {
+    width: 100%;
+    border-radius: 3.125rem;
+    padding: 1.25rem 1.875rem;
+    font-size: 1.5625rem;
+    border: none;
+    transition: 0.2s all;
+    box-shadow: inset 0 0 0.3125rem black;
+}
+
+/*
+Styles the input__box when it is in focus
+Box-shadow property creates a shadow effect around the input box
+outline property remove the default browser outline that appears when an input is in focus
+*/
+.input__box:focus {
+    box-shadow: 0 0 0.625rem 62.5rem rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+/* 
+Styles the submit button for the input form
+--fifty is a custom property that is set to 3.125rem and is used for setting width and height of the button, as well as the border-radius
+position: absolute position the button relative to the nearest positioned ancestor.
+border is set to none to remove any border from the button
+margin is set to 0.75rem to add some space between the button and the input box
+right is set to 0 to position the button at the right edge of the input box
+background-color is set to #2f74c0 which is a shade of blue
+color is set to white to make the text color of the button white
+transition:0.2s all is added to smoothly transition the button when it is hovered over or active
+box-shadow is added to give the button a subtle shadow when it is not being interacted with
+*/
+.input__submit {
+    --fifty: 3.125rem;
+    position: absolute;
+    width: var(--fifty);
+    height: var(--fifty);
+    border-radius: var(--fifty);
+    border: none;
+    margin: 0.75rem;
+    right: 0;
+    background-color: #2f74c0;
+    color: white;
+    transition: 0.2s all;
+    box-shadow: 0 0 0.625rem black;
+
+}
+
+/*
+Added to submit button when the user hover over it with the cursor
+It changes the background color to a slightly darker shade of blue
+*/
+.input__submit:hover {
+    background-color: #388ae2;
+}
+
+/*
+The :active pseudo-class selcts and styles the active state of an element
+when the input__submit button is actively pressed
+It will scale down to 80% of it's original size
+box-shadow of  0 0 0.3125rem black
+Provide visual feedback to user that the button has been pressed  
+*/
+.input__submit:active {
+    transform: scale(0.8);
+    box-shadow: 0 0 0.3125rem black;
+}
+
+/* 
+Used as parent class for holding all the todo lists.
+display: flex is used to position the items in the container in a row.
+width:90% is used to set the width of the container to 95% of the parent element.
+margin-top: 0.625rem is used to add a margin of 0.625rem to the top of the container.
+justify-content: space-between is used to distribute the items in the container with equal space between them.
+align-items:flex-start is used to align the items in the container to the start of the container.
+*/
+.container {
+    display: flex;
+    width: 95%;
+    margin-top: 0.625rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/*
+Used to define the styling for the active and completed task lists.
+Flex container with width of 47.5% and flex-direction of column
+Padding is set to 0.9375rem and the border-radius is set to 0.3125rem
+backgrount is set to rgb(50, 195, 205) which is a shade of blue
+*/
+.todos {
+    display: flex;
+    width: 47.5%;
+    flex-direction: column;
+    padding: 0.9375rem;
+    border-radius: 0.3125rem;
+    background-color: rgb(50, 195, 205);
+
+}
+
+/*
+Used to style the heading of the todos container.
+It sets the font-size to 1.875rem and color to white to make the text stand out.
+*/
+.todos__heading {
+    font-size: 1.875rem;
+    color: white;
+}
+
+/* 
+Used for styling each individual todo item in the todo list.
+It sets the display property to flex, giving the ability to use flexbox for layout.
+The border-radius and padding properties give the todo item a nice rounded shape and some space inside
+The margin-top property adds a small space between each todo item.
+The background-image property sets a background image for the todo item.
+The transition property gives a smooth transition effect when the todo item is hovered over
+*/
+.todos__single {
+    display: flex;
+    border-radius: 0.3125rem;
+    padding: 1.25rem;
+    margin-top: 0.9375rem;
+    background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
+    transition: 0.2s;
+}
+
+/*
+Used to style the text of the individual todo items.
+The flex property is set to 1 to make sure it takes up all the available space in the parent container.
+Padding is added to give some space between the text and the border of the container.
+The border is set to none to remove the default border.
+The font-size is set to 1.25rem to make the text slightly larger than the default size.
+*/
+.todos__single--text {
+    flex: 1;
+    padding: 0.3125rem;
+    border: none;
+    font-size: 1.25rem;
+}
+
+/*
+Adds a visual effect to the todo list item when the user hover their mouse over it.
+The box-shadow property adds a subtle black shadow around the element,
+while the transform property increases the scale of the element by 3%.
+These effects create the appearance of the element being raised off the page.
+*/
+.todos__single:hover {
+    box-shadow: 0 0 0.3125rem black;
+    transform: scale(1.03);
+}
+
+/* 
+Styles the text element inside the todos__single when it is in focus
+It set the outline property to none, which remove the default focus indicator around the element
+*/
+.todos__single--text:focus {
+    outline: none;
+}
+
+/*
+Used to style the icons that are used in the Todo list.
+Margin-left property is used to give some left margin to the icons.
+font-size property is used to set the size of the icons
+cursor: pointer is used to indicate that the element is clickable
+*/
+.icons {
+    margin-left: 0.625rem;
+    font-size: 1.5625rem;
+    cursor: pointer;
+}
+
+/*
+Media query to adjust the width of the todos container on screens with a maximum width of 1100px.
+The width of the container is set to 45% to ensure proper display on smaller screens.
+*/
+@media (max-width: 1100px) {
+    .todos {
+        width: 45%;
+    }
+}
+
+/*
+Apply styles only when maximum width of the viewport is 700 pixels or less
+Applied affect three different css classes: ".input", ".todos", and ".container"
+
+*/
+@media (max-width: 700px) {
+    .input{
+        width: 95%;
+    }
+
+    .todos {
+        width: 90%;
+        margin-bottom: 0.625rem;
+    }
+
+    .container {
+        width: 95%;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.remove {
+    background-color: rgb(235, 103, 80);
+}
+
+.dragcomplete {
+    background-color: rgb(255, 38, 0);
+}
+
+.dragactive {
+    background-color: rgb(0, 221, 236);
+}
+
+.drag {
+    box-shadow: 0 0 1.25rem black;
+}
